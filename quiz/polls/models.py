@@ -1,4 +1,5 @@
 from datetime import datetime
+from django.core.urlresolvers import reverse
 from django.db import models
 
 
@@ -8,6 +9,9 @@ class Quiz(models.Model):
 
     def __unicode__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('polls:quiz', args=[self.pk])
 
 
 class Question(models.Model):
