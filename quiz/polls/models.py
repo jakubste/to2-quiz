@@ -29,3 +29,11 @@ class Choice(models.Model):
 
     def __unicode__(self):
         return self.text
+
+class NormalUser(models.Model):
+    login = models.CharField(max_length=30, default='')
+    password = models.CharField(max_length=30, default='yolo')
+    registration_date = models.DateField
+
+    def __unicode__(self):
+        return self.text
