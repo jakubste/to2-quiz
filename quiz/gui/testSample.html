@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Bootstrap Example</title>
+    <title>Quiz</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -56,22 +56,46 @@
 
 <div class="container-fluid">
     <div class="row">
+        <div class="col-sm-12 col-md-12">
+            <img src="gfx/logo.jpg" alt="QUIZ" class="img-rounded logo">
+        </div>
+    </div>
+    <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
-                <li class="text-right"><a href="createQuiz.html">Utwórz Quiz</a></li>
+			    <li class="text-right"><a href="indexExaminer.html">Utwórz Quiz</a></li>
                 <li><a href="results.html" class="text-right">Wyniki</a></li>
                 <li><a href="" class="text-right">Item3</a></li>
             </ul>
         </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-            <img src="gfx/img1.jpg" alt="QUIZ" class="img-thumbnail">
-            <br />
-            <br />
-            <h1 class="sub-header">Egzamin z Technologii Obiektowych</h1>
-            <br>
-            Egzamin TO <span style="margin-left: 200px"> <button type="button"><a href="testSample.html">Weź udział!</a></button></span>
-            <br>
-            Kolokwium z Sieci <span style="margin-left: 177px">Wynik 79%</span>
+        <div class="col-sm-9 col-md-10 main">
+            <h2>Egzamin z Technologii Obiektowych</h2>
+            <form class="form-horizontal col-sm-offset-1" role="form">
+                <br>
+                <div class="form-group">
+                    <label class="control-label"><u>Pytanie 1:</u> Treść pytania 1?</label>
+                    <div>
+                    <input type="checkbox" class="col-sm-1"> Odpowiedź 1 <br>
+                    <input type="checkbox" class="col-sm-1"> Odpowiedź 2 <br>
+                    <input type="checkbox" class="col-sm-1"> Odpowiedź 3 <br>
+                    <input type="checkbox" class="col-sm-1"> Odpowiedź 4 <br>
+                    </div>
+                    <br><br>
+                    <label class="control-label"><u>Pytanie 2:</u> Treść pytania 2?</label>
+                    <div>
+                    <input type="checkbox" class="col-sm-1"> Odpowiedź 1 <br>
+                    <input type="checkbox" class="col-sm-1"> Odpowiedź 2 <br>
+                    <input type="checkbox" class="col-sm-1"> Odpowiedź 3 <br>
+                    <input type="checkbox" class="col-sm-1"> Odpowiedź 4 <br>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <div class="col-sm-2">
+                        <button type="submit" class="btn btn-default">Zakończ</button>
+                    </div>
+                </div>
+                </form>
         </div>
     </div>
 </div>
