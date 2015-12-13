@@ -1,11 +1,11 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.urlresolvers import reverse
+from django.shortcuts import redirect
+
 from django.views.generic import ListView, FormView
+
 from quiz.polls.forms import QuizForm
-
 from quiz.polls.models import Quiz
-
-from django.shortcuts import render_to_response
-from django.contrib.auth.decorators import login_required
-from django.template import RequestContext
 
 
 class QuizListView(ListView):
@@ -14,7 +14,7 @@ class QuizListView(ListView):
     template_name = 'quiz_list.html'
 
 
-class QuizFormView(FormView):
+class QuizFormView(LoginRequiredMixin, FormView):
     form_class = QuizForm
     template_name = 'quiz.html'
 
@@ -23,9 +23,12 @@ class QuizFormView(FormView):
         kwargs['quiz'] = self.kwargs.get('pk', None)
         return kwargs
 
-#tak wiem ze slabo zrobione i w zlym miejscu
-@login_required
-def logged_in(request):
-    return render_to_response('logged_in.html',
-        context_instance=RequestContext(request)
-    )
+    # TODO: form says choices are invalid - need to fix it
+    def form_valid(self, form):
+        print form.fields['question1'].choices
+        return redirect(reverse('polls:quiz_list'))
+
+    def form_invalid(self, form):
+        print form.fields['question1'].choices
+        print form
+        return redirect(reverse('polls:quiz_list'))

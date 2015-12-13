@@ -6,6 +6,13 @@
 </head>
 <body>
 
+<div style="border: solid 1px black; margin: 10px">
+    {% if user.is_authenticated %}
+        Zalogowano jako {{ user }}. <a href="{% url 'accounts:logout' %}">Wyloguj.</a>
+    {% else %}
+        Nie jesteś zalogowany. <a href="{% url 'accounts:login' %}">Zaloguj.</a>
+    {% endif %}
+</div>
 <ul>
     {% for quiz in quizes %}
         <li>

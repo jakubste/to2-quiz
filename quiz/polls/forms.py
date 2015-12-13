@@ -18,5 +18,4 @@ class QuizForm(Form):
                 label=question.text,
                 # help_text=u'Zaznacz wszystkie poprawne odpowiedzi',
                 widget=CheckboxSelectMultiple(),
-
             )
