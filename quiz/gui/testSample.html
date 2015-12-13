@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Quiz</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href="css/dashboard.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand">QUIZ</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="account.html">My account</a>
+                </li>
+                <li class="dropdown">
+                     <a href="http://www.jquery2dotnet.com" class="dropdown-toggle" data-toggle="dropdown">Sign in <b class="caret"></b></a>
+                     <ul class="dropdown-menu" style="padding: 15px;min-width: 250px;">
+                        <li>
+                           <div class="row">
+                              <div class="col-md-12">
+                                 <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                                    <div class="form-group">
+                                       <label class="sr-only" for="loginForm">Login</label>
+                                       <input type="text" class="form-control" id="loginForm" placeholder="Login" required>
+                                    </div>
+                                    <div class="form-group">
+                                       <label class="sr-only" for="passwordForm">Password</label>
+                                       <input type="password" class="form-control" id="passwordForm" placeholder="Password" required>
+                                    </div>
+                                    <div class="checkbox">
+                                       <label>
+                                       <input type="checkbox"> Remember me
+                                       </label>
+                                    </div>
+                                    <div class="form-group">
+                                       <button type="submit" class="btn btn-success btn-block">Sign in</button>
+                                    </div>
+                                 </form>
+                              </div>
+                           </div>
+                        </li>
+                     </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12 col-md-12">
+            <img src="gfx/logo.jpg" alt="QUIZ" class="img-rounded logo">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar">
+			    <li class="text-right"><a href="indexExaminer.html">Utwórz Quiz</a></li>
+                <li><a href="results.html" class="text-right">Wyniki</a></li>
+                <li><a href="" class="text-right">Item3</a></li>
+            </ul>
+        </div>
+        <div class="col-sm-9 col-md-10 main">
+            <h2>Egzamin z Technologii Obiektowych</h2>
+            <form class="form-horizontal col-sm-offset-1" role="form">
+                <br>
+                <div class="form-group">
+                    <label class="control-label"><u>Pytanie 1:</u> Treść pytania 1?</label>
+                    <div>
+                    <input type="checkbox" class="col-sm-1"> Odpowiedź 1 <br>
+                    <input type="checkbox" class="col-sm-1"> Odpowiedź 2 <br>
+                    <input type="checkbox" class="col-sm-1"> Odpowiedź 3 <br>
+                    <input type="checkbox" class="col-sm-1"> Odpowiedź 4 <br>
+                    </div>
+                    <br><br>
+                    <label class="control-label"><u>Pytanie 2:</u> Treść pytania 2?</label>
+                    <div>
+                    <input type="checkbox" class="col-sm-1"> Odpowiedź 1 <br>
+                    <input type="checkbox" class="col-sm-1"> Odpowiedź 2 <br>
+                    <input type="checkbox" class="col-sm-1"> Odpowiedź 3 <br>
+                    <input type="checkbox" class="col-sm-1"> Odpowiedź 4 <br>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <div class="col-sm-2">
+                        <button type="submit" class="btn btn-default">Zakończ</button>
+                    </div>
+                </div>
+                </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
