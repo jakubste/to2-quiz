@@ -1,0 +1,13 @@
+{% block title %}Rejestracja{% endblock %}
+
+{% block content %}
+    <form action="" method="post">
+
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <input type="submit" value="Zaloguj">
+
+    </form>
+{% endblock %}

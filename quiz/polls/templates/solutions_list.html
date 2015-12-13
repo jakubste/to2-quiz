@@ -1,0 +1,21 @@
+<style type="text/css">
+    td {
+        padding: 5px;
+    }
+</style>
+
+<table border="1">
+    {% for solution in solutions %}
+        <tr>
+            <td>
+                {{ solution.quiz }}
+            </td>
+            <td>
+                {{ solution.user }}
+            </td>
+            <td>
+                {{ solution.result }}
+            </td>
+        </tr>
+    {% endfor %}
+</table>
