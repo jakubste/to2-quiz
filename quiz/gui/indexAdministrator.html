@@ -21,33 +21,33 @@
                     <a href="account.html">My account</a>
                 </li>
                 <li class="dropdown">
-                     <a href="http://www.jquery2dotnet.com" class="dropdown-toggle" data-toggle="dropdown">Sign in <b class="caret"></b></a>
-                     <ul class="dropdown-menu" style="padding: 15px;min-width: 250px;">
+                    <a href="http://www.jquery2dotnet.com" class="dropdown-toggle" data-toggle="dropdown">Sign in <b class="caret"></b></a>
+                    <ul class="dropdown-menu" style="padding: 15px;min-width: 250px;">
                         <li>
-                           <div class="row">
-                              <div class="col-md-12">
-                                 <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
-                                    <div class="form-group">
-                                       <label class="sr-only" for="loginForm">Login</label>
-                                       <input type="text" class="form-control" id="loginForm" placeholder="Login" required>
-                                    </div>
-                                    <div class="form-group">
-                                       <label class="sr-only" for="passwordForm">Password</label>
-                                       <input type="password" class="form-control" id="passwordForm" placeholder="Password" required>
-                                    </div>
-                                    <div class="checkbox">
-                                       <label>
-                                       <input type="checkbox"> Remember me
-                                       </label>
-                                    </div>
-                                    <div class="form-group">
-                                       <button type="submit" class="btn btn-success btn-block">Sign in</button>
-                                    </div>
-                                 </form>
-                              </div>
-                           </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                                        <div class="form-group">
+                                            <label class="sr-only" for="loginForm">Login</label>
+                                            <input type="text" class="form-control" id="loginForm" placeholder="Login" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="sr-only" for="passwordForm">Password</label>
+                                            <input type="password" class="form-control" id="passwordForm" placeholder="Password" required>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox"> Remember me
+                                            </label>
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-success btn-block">Sign in</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                         </li>
-                     </ul>
+                    </ul>
                 </li>
             </ul>
         </div>
@@ -63,65 +63,51 @@
     <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
-                <li class="text-right"><a href="indexAdministrator.html">Add/Delete User</a></li>
-                <li><a href="editUserData.html" class="text-right">Edit User Data</a></li>
+                <li class="text-right"><a href="indexAdministrator.html">Add user</a></li>
+                <li class="text-right"><a href="deleteUser.html">Delete user</a></li>
+                <li class="text-right"><a href="editUserData.html">Edit user data</a></li>
             </ul>
         </div>
         <div class="col-sm-9 col-md-10 main">
             <br />
-            <br />
-            <h1 class="page-header">Add/Delete User</h1>
-            <br />
-            <div class="row">
-                <div class="col-sm-5 col-md-6">
-                    <form role="search">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Firstname / Lastname / Username" name="srch-term" id="srch-term">
-                            <div class="input-group-btn">
-                                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <br />
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    Users List
-                </div>
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Firstname</th>
-                                    <th>Lastname</th>
-                                    <th>Email</th>
-                                    <th>Username</th>
-                                    <th>*</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Łukasz</td>
-                                    <td>Petka</td>
-                                    <td>mail@mail</td>
-                                    <td>lukpet</td>
-                                    <td><input type="checkbox" value="1"/></td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Marcin</td>
-                                    <td>Zaręba</td>
-                                    <td>mail@mail</td>
-                                    <td>marzar</td>
-                                    <td><input type="checkbox" value="2"/></td>
-                                </tr>
-                            </tbody>
-                        </table>
+            <h1 class="page-header">Add user</h1>
+            <form class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label class="control-label col-sm-1" for="firstname">First name:</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="firstname" placeholder="First name">
                     </div>
-            </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-1" for="lastname">Last name:</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="lastname" placeholder="Last name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-1" for="email">E-mail:</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="email" placeholder="E-mail">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-1" for="username">User name:</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="username" placeholder="User name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-1" for="password">Password:</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="password" placeholder="Password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-1 col-sm-4">
+                        <button type="submit" class="btn btn-default">Create user</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>
