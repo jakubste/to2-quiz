@@ -1,3 +1,4 @@
-web: gunicorn quiz.wsgi --log-file -
-python manage.py migrate
-python manage.py collectstatic
+web: gunicorn quiz.wsgi
+web: python manage.py migrate
+web: python manage.py collectstatic
+heroku ps:scale web=1
