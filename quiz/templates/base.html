@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link href="../static/dashboard.css" rel="stylesheet">
+    <link href="{% static 'dashboard.css' %}" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
@@ -57,62 +59,20 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-12 col-md-12">
-            <img src="../static/images/logo.jpg" alt="QUIZ" class="img-rounded logo">
+            <img src="{% static 'images/logo.jpg' %}" alt="QUIZ" class="img-rounded logo">
         </div>
     </div>
     <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
-                <li class="text-right"><a href="indexAdministrator.html">Add user</a></li>
+                <li class="text-right"><a href="indexAdministrator.html">Add User</a></li>
                 <li class="text-right"><a href="editUsersData.html">Edit users data</a></li>
             </ul>
         </div>
+
         <div class="col-sm-9 col-md-10 main">
-            <br />
-            <h1 class="page-header">Add user</h1>
-            <form class="form-horizontal" role="form">
-                <div class="form-group">
-                    <label class="control-label col-sm-1" for="firstname">First name:</label>
-                    <div class="col-sm-4">
-                        <input type="text" class="form-control" id="firstname" placeholder="First name">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-sm-1" for="lastname">Last name:</label>
-                    <div class="col-sm-4">
-                        <input type="text" class="form-control" id="lastname" placeholder="Last name">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-sm-1" for="email">E-mail:</label>
-                    <div class="col-sm-4">
-                        <input type="text" class="form-control" id="email" placeholder="E-mail">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-sm-1" for="username">User name:</label>
-                    <div class="col-sm-4">
-                        <input type="text" class="form-control" id="username" placeholder="User name">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-sm-1" for="password">Password:</label>
-                    <div class="col-sm-4">
-                        <input type="text" class="form-control" id="password" placeholder="Password">
-                    </div>
-                </div>
-                <div class="form-group">
-                <label class="control-label col-sm-2 radio-inline"><input type="radio" name="optradio">Użytkownicy</label>
-                <label class="control-label col-sm-1 radio-inline"><input type="radio" name="optradio">Egzaminator</label>
-                <label class="control-label col-sm-1 radio-inline"><input type="radio" name="optradio">Administrator</label>
-                </div>
-                <br>
-                <div class="form-group">
-                    <div class="col-sm-offset-1 col-sm-4">
-                        <button type="submit" class="btn btn-default">Create user</button>
-                    </div>
-                </div>
-            </form>
+            {% block content %}
+            {% endblock %}
         </div>
     </div>
 </div>

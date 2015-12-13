@@ -5,4 +5,3 @@ django-super-inlines
 dj-database-url
 gunicorn
 whitenoise
-psycopg2==2.5.4

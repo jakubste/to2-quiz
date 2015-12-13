@@ -1,4 +1,5 @@
 quiz/local_settings.py
+staticfiles/*
 
 # PyCharm stuff
 .idea
