@@ -30,7 +30,7 @@ def logout_view(request):
 class RegisterView(FormView):
     template_name = 'register.html'
     form_class = RegistrationForm
-    success_url = 'quiz:quiz_list'
+    success_url = 'polls:quiz_list'
 
     @sensitive_variables('password')
     def form_valid(self, form):
