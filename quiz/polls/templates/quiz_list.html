@@ -1,3 +1,5 @@
+{% load solved %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,8 +25,15 @@
 </div>
 <ul>
     {% for quiz in quizes %}
+
+        {% solved quiz as solved %}
+
         <li>
-            <a href="{{ quiz.get_absolute_url }}">{{ quiz.name }}</a>
+            {% if not solved %}
+                <a href="{{ quiz.get_absolute_url }}">{{ quiz.name }}</a>
+            {% else %}
+                {{ quiz.name }} - Twój wynik: {{ solved }} %
+            {% endif %}
         </li>
     {% endfor %}
 </ul>
