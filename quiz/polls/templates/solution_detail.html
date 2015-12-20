@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {{ solution.quiz }}<br><br>
+
+    {{ solution.result }} <br><br>
+
+    {% for item in solution.answers.items %}
+
+        {% with question=item.1 %}
+
+            {{ question.question }}<br>
+            {% for choice in question.choices.items %}
+                {% with answer=choice.1 %}
+                    <li>
+                        {{ answer.answer }} |
+                        poprawna: {{ answer.is_correct }}
+                        zaznaczono: {{ answer.selected }}
+                    </li>
+                {% endwith %}<br>
+            {% endfor %}
+
+        {% endwith %}
+
+        <br>
+
+    {% endfor %}
+{% endblock %}

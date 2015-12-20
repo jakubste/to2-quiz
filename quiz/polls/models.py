@@ -2,6 +2,7 @@ from datetime import datetime
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 from django.db import models
+from jsonfield import JSONField
 
 
 class Quiz(models.Model):
@@ -36,3 +37,4 @@ class Solution(models.Model):
     quiz = models.ForeignKey(Quiz, related_name='solutions')
     user = models.ForeignKey(User, related_name='solutions')
     result = models.FloatField()
+    answers = JSONField(null=True)
