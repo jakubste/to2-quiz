@@ -14,7 +14,9 @@
                 {{ solution.user }}
             </td>
             <td>
-                {{ solution.result }}
+                <a href="{% url 'polls:solution_detail' solution.pk %}">
+                    {{ solution.result }}
+                </a>
             </td>
         </tr>
     {% endfor %}
