@@ -11,17 +11,22 @@
                                   accept-charset="UTF-8" id="login-nav">
                                 {% csrf_token %}
                                 <div class="form-group">
-                                    <label class="sr-only" for="loginForm">Login</label>
+                                    <label class="sr-only" for="loginForm">Nazwa użytkownika</label>
                                     <input type="text" name="username" class="form-control" id="loginForm"
                                            placeholder="Login" required>
                                 </div>
                                 <div class="form-group">
-                                    <label class="sr-only" for="passwordForm">Password</label>
+                                    <label class="sr-only" for="passwordForm">Hasło</label>
                                     <input type="password" name="password" class="form-control" id="passwordForm"
                                            placeholder="Password" required>
                                 </div>
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-success btn-block">Sign in</button>
+                                    <button type="submit" class="btn btn-success btn-block">Zaloguj</button>
+                                </div>
+                                <div class="form-group">
+                                    <a href="{% url 'accounts:register' %}">
+                                        <button type="button" class="btn btn-info btn-block">Zarejestruj</button>
+                                    </a>
                                 </div>
                             </form>
                         </div>
