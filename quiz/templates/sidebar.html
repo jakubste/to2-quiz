@@ -4,7 +4,7 @@
 
     {% if user.is_staff %}
         <li class="text-right"><a href="{% url 'polls:solution_list' %}">Wyniki uczestników</a></li>
-    {% else %}
+    {% elif user.is_authenticated %}
         <li class="text-right"><a href="{% url 'polls:solution_list' %}">Twoje wyniki</a></li>
     {% endif %}
 
