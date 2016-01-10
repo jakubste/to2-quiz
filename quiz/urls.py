@@ -16,9 +16,10 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
+admin.autodiscover()
+
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^quizy/', include('quiz.polls.urls', namespace='polls')),
-    url(r'^konto/', include('quiz.accounts.urls', namespace='accounts')),
-
+    url(r'^', include('quiz.accounts.urls', namespace='accounts')),
 ]

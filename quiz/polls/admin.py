@@ -1,6 +1,7 @@
 from django.contrib.admin import site
 from django.contrib.admin.options import StackedInline, TabularInline
 from super_inlines.admin import SuperInlineModelAdmin, SuperModelAdmin
+
 from quiz.polls.models import Choice, Question, Quiz
 
 
@@ -24,5 +25,3 @@ class QuizAdmin(SuperModelAdmin):
 
 
 site.register(Quiz, QuizAdmin)
-
-site.register(Question)
