@@ -1,0 +1,19 @@
+<ul class="nav nav-sidebar">
+
+    <li class="text-right"><a href="{% url 'polls:quiz_list' %}">Lista quizów</a></li>
+
+    {% if user.is_staff %}
+        <li class="text-right"><a href="{% url 'polls:solution_list' %}">Wyniki uczestników</a></li>
+    {% else %}
+        <li class="text-right"><a href="{% url 'polls:solution_list' %}">Twoje wyniki</a></li>
+    {% endif %}
+
+    {% if user.is_staff %}
+        <li class="text-right"><a href="{% url 'admin:polls_quiz_changelist' %}">Edycja quizów</a></li>
+    {% endif %}
+
+    {% if user.is_superuser %}
+        <li class="text-right"><a href="{% url 'admin:auth_user_changelist' %}">Zarządzanie użytkownikami</a></li>
+    {% endif %}
+
+</ul>

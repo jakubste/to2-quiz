@@ -1,10 +1,8 @@
 # coding=utf-8
 from django.contrib import messages
-from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.urlresolvers import reverse
 from django.shortcuts import redirect
-from django.utils.decorators import method_decorator
 from django.views.generic import ListView, FormView
 from django.views.generic.detail import DetailView
 
@@ -23,9 +21,11 @@ class SolutionListView(ListView):
     context_object_name = 'solutions'
     template_name = 'solutions_list.html'
 
-    @method_decorator(staff_member_required)
-    def dispatch(self, request, *args, **kwargs):
-        return super(SolutionListView, self).dispatch(request, *args, **kwargs)
+    def get_queryset(self):
+        qs = super(SolutionListView, self).get_queryset()
+        if not self.request.user.is_staff:
+            qs = qs.filter(user=self.request.user)
+        return qs
 
 
 class SolutionDetailView(LoginRequiredMixin, DetailView):

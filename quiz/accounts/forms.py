@@ -17,12 +17,16 @@ class RegistrationForm(forms.Form):
     email = forms.EmailField(max_length=255, label=u'Adres email')
     username = forms.CharField(max_length=255, label=u'Nazwa użytkownika')
     password = forms.CharField(max_length=255, min_length=4, widget=forms.PasswordInput, label=u'Hasło')
+    first_name = forms.CharField(label=u'Imię', required=False)
+    last_name = forms.CharField(label=u'Nazwisko', required=False)
 
     def __init__(self, *args, **kwargs):
         super(RegistrationForm, self).__init__(*args, **kwargs)
         self.fields['email'].widget.attrs.update({'placeholder': u'Wpisz adres email'})
         self.fields['username'].widget.attrs.update({'placeholder': u'Wpisz nazwę użytkownika'})
         self.fields['password'].widget.attrs.update({'placeholder': u'Podaj hasło'})
+        self.fields['first_name'].widget.attrs.update({'placeholder': u'Podaj swoje imię'})
+        self.fields['last_name'].widget.attrs.update({'placeholder': u'Podaj swoje nazwisko'})
 
     def clean_email(self):
         email = self.cleaned_data.get('email')

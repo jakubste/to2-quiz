@@ -1,23 +1,62 @@
-<style type="text/css">
-    td {
-        padding: 5px;
-    }
-</style>
+{% extends 'base.html' %}
 
-<table border="1">
-    {% for solution in solutions %}
+
+{% block content %}
+
+    {#      TODO: move to .css #}
+    <style type="text/css">
+        td {
+            padding: 5px;
+        }
+    </style>
+
+{#      TODO: style me #}
+    <h1>
+        {% if user.is_staff %}
+            Wyniki uczestników
+        {% else %}
+            Twoje wyniki
+        {% endif %}
+    </h1>
+
+{#      TODO: style me #}
+    <table border="1">
         <tr>
             <td>
-                {{ solution.quiz }}
+                Quiz
             </td>
+            {% if user.is_staff %}
+                <td>
+                    Nazwa użytkownika
+                </td>
+                <td>
+                    Imię i nazwisko użytkownika
+                </td>
+            {% endif %}
             <td>
-                {{ solution.user }}
-            </td>
-            <td>
-                <a href="{% url 'polls:solution_detail' solution.pk %}">
-                    {{ solution.result }}
-                </a>
+                Rezultat
             </td>
         </tr>
-    {% endfor %}
-</table>
+        {% for solution in solutions %}
+            <tr>
+                <td>
+                    {{ solution.quiz }}
+                </td>
+                {% if user.is_staff %}
+                    <td>
+                        {{ solution.user }}
+                    </td>
+                    <td>
+                        {{ solution.user.get_full_name }}
+                    </td>
+                {% endif %}
+                <td>
+                    <a href="{% url 'polls:solution_detail' solution.pk %}">
+                        {{ solution.result }} %
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}
