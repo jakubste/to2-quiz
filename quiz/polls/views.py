@@ -1,4 +1,5 @@
 # coding=utf-8
+from datetime import datetime
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.urlresolvers import reverse
@@ -14,6 +15,10 @@ class QuizListView(ListView):
     model = Quiz
     context_object_name = 'quizes'
     template_name = 'quiz_list.html'
+
+    def get_queryset(self):
+        qs = super(QuizListView, self).get_queryset()
+        return qs.filter(pub_date__lte=datetime.now())
 
 
 class SolutionListView(ListView):
